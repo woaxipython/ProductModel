@@ -1,4 +1,4 @@
-class LiuChengGouJian:
+class MainLiuCheng:
     """
     当有了一个新idea后，首先进行市场调研
     调研内容：
@@ -36,3 +36,7 @@ class LiuChengGouJian:
     def xuanPin(self, name, age):
         self.name = name
         self.age = age
+if __name__ == '__main__':
+    idea = LiuChengGouJian('新的idea')
+    idea.diaoYan('张三', 20)
+    idea.xuanPin('李四', 30)
