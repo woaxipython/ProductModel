@@ -1,3 +1,6 @@
+from FunctionApp.DiaoYan import DiaoYan
+
+
 class MainLiuCheng:
     """
     当有了一个新idea后，首先进行市场调研
@@ -27,16 +30,24 @@ class MainLiuCheng:
     5. 如果符合预期，则返回True，否则则返回False
     """
     def __init__(self, idea):
+        """idea为口语化的单词，例如：军训鞋垫、发光笔等等"""
         self.idea = idea
 
-    def diaoYan(self, name, age):
-        self.name = name
-        self.age = age
+    def diaoYan(self):
+        # 1. 调查淘宝关键词搜索情况，淡旺季、市场情况、主要卖点、主要痛点
+        # 2. 调查拼多多关键词搜索情况、销量、客单价等
+        # 3. 调查抖音的市场情况
+        # 4. 调查小红书的主要关键词、意向匹配博主等等
+        # 5. 通过AI，进行该关键词的市场调研
+
+        dy = DiaoYan()
+        taobao = dy.DiaoYanTB('淘宝')
+        pinduoduo = dy.DiaoYanTB('拼多多')
+        douyin = dy.DiaoYanTB('抖音')
+        xiaohongshu = dy.DiaoYanTB('小红书')
 
     def xuanPin(self, name, age):
         self.name = name
         self.age = age
 if __name__ == '__main__':
-    idea = LiuChengGouJian('新的idea')
-    idea.diaoYan('张三', 20)
-    idea.xuanPin('李四', 30)
+    idea = MainLiuCheng('新的idea')
